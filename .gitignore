@@ -1,0 +1,23 @@
+HELP.md
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### Gradle ###
+.gradle
+
+### Logs ###
+*.log
