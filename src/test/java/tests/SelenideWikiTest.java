@@ -37,9 +37,18 @@ public class SelenideWikiTest {
                 .findBy(text("SoftAssertions"))
                 .shouldBe(visible)
                 .click();
-        $("#wiki-body .markdown-body")
-                .$$("div")
-                .findBy(text("Using JUnit5 extend test class"))
-                .shouldBe(visible);
+        $x("//div[@id='wiki-content']").shouldHave(text("""
+    @ExtendWith({SoftAssertsExtension.class})
+    class Tests {
+        @Test
+        void test() {
+            Configuration.assertionMode = SOFT;
+            open("page.html");
+
+            $("#first").should(visible).click();
+            $("#second").should(visible).click();
+        }
+    }
+    """));
     }
 }
